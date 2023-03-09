@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .spinner {
+    width: 16rem;
+    height: 16rem;
+    position: relative;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+  .spinner div {
+    box-sizing: border-box;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 8px solid transparent;
+    border-top-color: #8783F7;
+    border-radius: 50%;
+    animation: spinnerOne 1.2s linear infinite;
+  }
+  .spinner div:nth-child(2) {
+    border: 8px solid transparent;
+    border-bottom-color: #91C7FD;
+    animation: spinnerTwo 1.2s linear infinite;
+  }
+  .fade {
+    animation: fade-in-keyframes 1s;
+  }
+  
+  @keyframes fade-in-keyframes {
+    from {opacity: 2}
+    to {opacity: 0}
+  }
+  
+}
+
+@keyframes spinnerOne {
+  0% { transform: rotate(0deg); border-width: 10px; }
+  50% { transform: rotate(180deg); border-width: 5px; }
+  100% { transform: rotate(360deg); border-width: 10px; }
+}
+@keyframes spinnerTwo {
+  0% { transform: rotate(0deg); border-width: 5px; }
+  50% { transform: rotate(180deg); border-width: 10px; }
+  100% { transform: rotate(360deg); border-width: 5px; }
+}  
+@layer base {
+  h1 {
+    @apply text-9xl;
+  }
+  h2 {
+    @apply text-8xl;
+  }
+  h3 {
+    @apply text-7xl;
+  }
+  h4 {
+    @apply text-6xl;
+  }
+  h5 {
+    @apply text-5xl;
+  }
+  h6 {
+    @apply text-4xl;
+  }
+  p {
+    @apply text-body2;
+  }
+}
+
+html, body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.right-section, .btn-login{
+  background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+}
